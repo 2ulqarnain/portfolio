@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+  color: white;
+  background-color: #d9d9d9;
+}
+
+.gradient-primary {
+  @apply bg-gradient-to-r from-fire to-electric
+}
+
+.gradient-secondary{
+  @apply bg-gradient-to-r from-cobalt to-electric
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent
+}

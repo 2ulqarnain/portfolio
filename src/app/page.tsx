@@ -13,7 +13,7 @@ export default function Home() {
         Haider
       </p>
       <p className="text-zinc-500">
-        Full Stack Web Developer | Worked on several frameworks
+        Full Stack Web Developer | Expertise in NextJs & Svelte-Kit
       </p>
       <a
         href="mailto:itsme@zulqarnain.online"

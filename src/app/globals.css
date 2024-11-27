@@ -17,3 +17,10 @@ body {
 .gradient-text {
   @apply bg-clip-text text-transparent
 }
+
+.writing-mode-vertical-lr {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  /* text-orientation: upright; */
+  transform-origin: center;
+}

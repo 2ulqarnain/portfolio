@@ -2,25 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  height: 100vh;
+@property --background {
+    syntax: "<color>";
+    initial-value: #d6d1d3;
+}
+
+@property --foreground {
+    syntax: "<color>";
+    initial-value: #222;
+}
+.dark {
+    --background: #1a202c;
+    --foreground: #aaaaaa;
+    --foreground-light: #dddddd;
 }
 
 .gradient-primary {
-  @apply bg-gradient-to-r from-fire to-electric
+    @apply bg-gradient-to-r from-fire to-electric;
 }
 
-.gradient-secondary{
-  @apply bg-gradient-to-r from-cobalt to-electric
+.gradient-secondary {
+    @apply bg-gradient-to-r from-cobalt to-electric;
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent
+    @apply bg-clip-text text-transparent;
 }
 
 .writing-mode-vertical-lr {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  /* text-orientation: upright; */
-  transform-origin: center;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    /* text-orientation: upright; */
+    transform-origin: center;
+}
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
 }

@@ -1,17 +1,21 @@
 "use client";
+import { TextMorph } from "@/components/ui/text-morph";
 import { motion, useScroll, useTransform } from "framer-motion";
+import portfolioZ from "../content/portfolios/portfolioZ";
 
-export default function UserInfo() {
+export default function UserInfo({
+  portfolio,
+  togglePortfolio,
+}: {
+  portfolio: typeof portfolioZ;
+  togglePortfolio: () => void;
+}) {
   return (
-    <motion.div className="col-span-2">
-      <motion.span
-        initial={{ scale: 0.7 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="text-4xl font-serif origin-left"
-      >
-        Zulqarnain Haider
-      </motion.span>
+    <motion.div className="md:col-span-2">
+      <span className="text-4xl font-serif origin-left flex gap-2">
+        <TextMorph>{portfolio?.name.split(" ")[0]}</TextMorph>
+        <TextMorph>{portfolio?.name.split(" ")?.[1]}</TextMorph>
+      </span>
       <motion.div
         initial={{
           y: 0,
@@ -27,7 +31,7 @@ export default function UserInfo() {
         }}
         className="text-stone-500"
       >
-        React | Svelte | Next | Node
+        {portfolio.designation}
       </motion.div>
     </motion.div>
   );

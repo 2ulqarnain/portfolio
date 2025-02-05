@@ -1,21 +1,13 @@
+import portfolioZ from "@/app/content/portfolios/portfolioZ";
 import SkillCard from "./skillsCard";
 
-export default function Skills() {
-  const skills = [
-    "react",
-    "tailwind",
-    "HTML",
-    "CSS",
-    "javascript",
-    "next",
-    "sveltekit",
-    "SEO",
-    "Stocks",
-  ];
-
+interface Props {
+  portfolio: typeof portfolioZ;
+}
+export default function Skills({ portfolio }: Props) {
   return (
-    <div className="flex col-start-2 gap-1 flex-wrap items-end w-1/2">
-      {skills.map((skill) => (
+    <div className="flex md:col-start-2 gap-1 flex-wrap justify-end flex-row-reverse items-end">
+      {portfolio.skills.map((skill) => (
         <SkillCard key={skill} {...{ skill }} />
       ))}
     </div>

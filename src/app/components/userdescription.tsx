@@ -1,35 +1,34 @@
 import { motion } from "framer-motion";
+import portfolioZ from "../content/portfolios/portfolioZ";
 
-export default function UserDescription() {
+export default function UserDescription({
+  portfolio,
+}: {
+  portfolio: typeof portfolioZ;
+}) {
   return (
     <motion.p
-        initial={{
-            background:"linear-gradient(90deg, #22200 0%, #a78bfa -200%, #222 0%)",
-            color:"transparent",
-            backgroundClip:"text"
-        }}
-        animate={{
-            background:[
-                "linear-gradient(90deg, #22200 0%, #a78bfa -200%, #222 0%)",
-                "linear-gradient(90deg, #222 0%, #a78bfa 0%, #222 150%)",
-                "linear-gradient(90deg, #222 0%, #a78bfa 50%, #222 150%)",
-                "linear-gradient(90deg, #222 0%, #a78bfa 100%, #222 200%)",
-                "linear-gradient(90deg, #222 50%,  #a78bfa 200%, #22200 200%)",
-                "#222",
-            ]
-        }}
-        transition={{
-            duration:2
-        }}
-        className="text-stone-600 text-sm mb-3">
-      I&apos;m Zulqarnain Haider, a{" "}
-      <b className="text-violet-900">Full Stack Developer</b> with 2+ years of
-      experience creating fast, scalable, and user-friendly applications. I have
-      a strong focus on building efficient systems, delivering seamless user
-      experiences, and optimizing performance. From developing complex tools
-      like a high-performance stock screener to handling integrations and cloud
-      services, I&apos;m passionate about crafting innovative solutions that
-      push the boundaries of web development.
+      initial={{
+        background: `linear-gradient(90deg, #fff0 0%, #a78bfa -200%, var(--foreground) 0%)`,
+        color: "transparent",
+        backgroundClip: "text",
+      }}
+      animate={{
+        background: [
+          `linear-gradient(90deg, var(--foreground) 0%, #a78bfa -200%, var(--foreground) 0%)`,
+          `linear-gradient(90deg, var(--foreground) 0%, #a78bfa 0%, var(--foreground) 150%)`,
+          `linear-gradient(90deg, var(--foreground) 0%, #a78bfa 50%, var(--foreground) 150%)`,
+          `linear-gradient(90deg, var(--foreground) 0%, #a78bfa 100%, var(--foreground) 200%)`,
+          `linear-gradient(90deg, var(--foreground) 50%,  #a78bfa 200%, var(--foreground) 200%)`,
+          "var(--foreground)",
+        ],
+      }}
+      transition={{
+        duration: 2,
+      }}
+      className="text-sm mb-3"
+    >
+      {portfolio.description}
     </motion.p>
   );
 }

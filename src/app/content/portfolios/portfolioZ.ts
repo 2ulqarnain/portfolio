@@ -1,0 +1,41 @@
+export default {
+  id: 0,
+  name: "Zulqarnain Haider",
+  designation: "Web Developer - Full Stack",
+  description:
+    "I am a Full Stack Web Developer with a passion for creating beautiful and functional websites. I have experience in building web applications using modern technologies like React, Node.js, and MongoDB. I am always eager to learn new things and improve my skills. I am a quick learner and a team player who enjoys working with others to achieve common goals.",
+  skills: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Express",
+    "Next",
+    "Tailwind",
+    "Svelte",
+    "MongoDB",
+    "PostgreSQL",
+    "GraphQL",
+    "REST API",
+    "Git",
+    "Bitbucket",
+    "Jira",
+    "Stock Market",
+    "SEO",
+  ],
+  experiences: [
+    {
+      title: "Junior Frontend Developer",
+      company: "W4Work Inc.",
+      duration: "August 2022 - November 2022",
+      description: "",
+    },
+    {
+      title: "Frontend Developer",
+      company: "Million News Media Pvt. Ltd.",
+      duration: "November 2022 - August 2024",
+      description: "",
+    },
+  ],
+};

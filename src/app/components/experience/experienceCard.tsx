@@ -1,7 +1,14 @@
-export default function ExperienceCard() {
+import { Experience } from "@/app/types";
+
+interface Props {
+  experience: Experience;
+}
+
+export default function ExperienceCard({ experience }: Props) {
   return (
-    <div className="p-2 col-span-2 aspect-[1.3] rounded-lg col-start-2 h-64 border border-stone-400">
-      W4Work inc.
+    <div className="flex items-center gap-x-2">
+      <div className="grow h-0.5 rounded-xl bg-gradient-to-r from-violet-700 to-blue-700"></div>
+      <span>{experience.title}</span>
     </div>
   );
 }

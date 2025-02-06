@@ -1,7 +1,6 @@
 import w4workLogo from "@/../public/assets/logos/w4work-logo.png";
 import stLightLogo from "@/../public/assets/logos/st-light.webp";
 import { StaticImageData } from "next/image";
-import { ExperienceCardProps } from "./experienceCard";
 
 export enum CompanyType {
   FinTech = "FinTech",
@@ -17,7 +16,7 @@ export interface Experience {
   duration: string;
 }
 
-export const experienceList: ExperienceCardProps[] = [
+export const experienceList = [
   {
     companyLogo: w4workLogo,
     companyName: "w4work inc.",

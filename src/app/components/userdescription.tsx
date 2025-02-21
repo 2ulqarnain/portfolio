@@ -3,8 +3,10 @@ import portfolioZ from "../content/portfolios/portfolioZ";
 
 export default function UserDescription({
   portfolio,
+  enableMagic,
 }: {
   portfolio: typeof portfolioZ;
+  enableMagic: boolean;
 }) {
   return (
     <motion.p
@@ -28,7 +30,20 @@ export default function UserDescription({
       }}
       className="text-sm mb-3"
     >
-      {portfolio.description}
+      {!enableMagic
+        ? portfolio.description
+        : portfolio.description
+            .split("")
+            .map((char, index) =>
+              char === "a" ? (
+                <span
+                  key={`${char}${index}`}
+                  className="text-purple-500 before:content-['A']"
+                ></span>
+              ) : (
+                char
+              )
+            )}
     </motion.p>
   );
 }

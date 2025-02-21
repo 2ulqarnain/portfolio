@@ -6,7 +6,10 @@ interface Props {
 }
 export default function Skills({ portfolio }: Props) {
   return (
-    <div className="flex md:col-start-2 gap-1 flex-wrap justify-end flex-row-reverse items-end">
+    <div
+      id="skills-container"
+      className="flex md:col-start-2 gap-1 flex-wrap justify-start items-end"
+    >
       {portfolio.skills.map((skill) => (
         <SkillCard key={skill} {...{ skill }} />
       ))}

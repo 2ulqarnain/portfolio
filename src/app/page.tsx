@@ -7,9 +7,11 @@ import Experience from "./components/experience/experience";
 import { useState } from "react";
 import portfolioZ from "./content/portfolios/portfolioZ";
 import portfolioA from "./content/portfolios/portfolioA";
+import EasterEgg from "./components/EasterEgg";
 
 export default function Home() {
   const [portfolio, setPortfolio] = useState(portfolioZ);
+  const [enableMagic, setEnableMagic] = useState(false);
   return (
     <main
       id="landing-page"
@@ -17,14 +19,16 @@ export default function Home() {
     >
       <div className="row-span-3 col-start-1 flex justify-center px-12"></div>
       <UserInfo
+        enableMagic={enableMagic}
         portfolio={portfolio}
         togglePortfolio={() =>
           setPortfolio((prev) => (prev.id === 0 ? portfolioA : portfolioZ))
         }
       />
-      <UserDescription {...{ portfolio }} />
+      <UserDescription {...{ portfolio, enableMagic }} />
       <Skills portfolio={portfolio} />
       <Experience portfolio={portfolio} />
+      <EasterEgg setEnableMagic={setEnableMagic} />
     </main>
   );
 }

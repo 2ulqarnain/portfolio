@@ -6,15 +6,22 @@ import portfolioZ from "../content/portfolios/portfolioZ";
 export default function UserInfo({
   portfolio,
   togglePortfolio,
+  enableMagic,
 }: {
   portfolio: typeof portfolioZ;
   togglePortfolio: () => void;
+  enableMagic: boolean;
 }) {
   return (
     <motion.div className="md:col-span-2">
       <span className="text-4xl font-serif origin-left flex gap-2">
-        <TextMorph>{portfolio?.name.split(" ")[0]}</TextMorph>
-        <TextMorph>{portfolio?.name.split(" ")?.[1]}</TextMorph>
+        <TextMorph>
+          {enableMagic ? "Z" : portfolio?.name.split(" ")[0]}
+        </TextMorph>
+        <TextMorph style={{ marginLeft: enableMagic ? "-5px" : "" }}>
+          {enableMagic ? "A" : portfolio?.name.split(" ")?.[1]}
+        </TextMorph>
+        {enableMagic && <span className="">in ❤️</span>}
       </span>
       <motion.div
         initial={{
